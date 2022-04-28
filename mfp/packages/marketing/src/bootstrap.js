@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
+
+import App from './App';
 
 console.log('Ajay');
 //Mount function to start up the app
+console.log(App);
 const mount = (el) => {
-  ReactDOM.render(<h1>Hi there!</h1>, el);
+  ReactDOM.render(<App />, el);
 };
 
 // If we r in development and in isolation, call mount immediately
 if (process.env.NODE_ENV === 'development') {
-  const devRoot = document.getElementById('_marketing-dev-root');
+  const devRoot = document.querySelector('#_marketing-dev-root');
   if (devRoot) {
     mount(devRoot);
   }
